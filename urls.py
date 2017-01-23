@@ -4,50 +4,17 @@
 import urllib.parse
 import urllib.request
 from colorama import Fore, Style
+import json
 
 
-urls = {
-    'commacd': {
-        'project': 'CommaCD',
-        'url': 'https://github.com/shyiko/commacd.git',
-    },
-    'composer': {
-        'project': 'Composer',
-        'url': 'https://raw.githubusercontent.com/composer/getcomposer.org/master/web/installer',
-    },
-    'dbeaver': {
-        'project': 'DBeaver',
-        'url': 'http://dbeaver.jkiss.org/files/dbeaver-ce_latest_amd64.deb',
-    },
-    'ffoxdev': {
-        'project': 'Firefox Developer',
-        'url': 'https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-aurora/firefox-52.0a2.en-US.linux-x86_64.tar.bz2',
-    },
-    'hh': {
-        'project': 'HHighlighter',
-        'url': 'https://github.com/paoloantinori/hhighlighter.git',
-    },
-    'insomnia': {
-        'project': 'Insomnia',
-        'url': 'https://builds.insomnia.rest/downloads/ubuntu/latest',
-    },
-    'lprompt': {
-        'project': 'Liquid Prompt',
-        'url': 'https://github.com/nojhan/liquidprompt.git',
-    },
-    'node': {
-        'project': 'NodeJS',
-        'url': 'https://nodejs.org/dist/v6.9.4/node-v6.9.4-linux-x64.tar.xz',
-    },
-    'shellchk': {
-        'project': 'ShellCheck',
-        'url': 'http://launchpadlibrarian.net/183003718/shellcheck_0.3.3-1~ubuntu14.04.1_amd64.deb',
-    },
-    'vscode': {
-        'project': 'Visual Studio Code',
-        'url': 'https://go.microsoft.com/fwlink/?LinkID=760868',
-    },
-}
+urls = {}
+
+data_path = './urls.json'
+
+
+with open(data_path, 'r') as f:
+    read_data = f.read()
+    urls = json.loads(read_data)
 
 
 def validar_url(url):
