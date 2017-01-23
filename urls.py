@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import sys
+
 import urllib.parse
 import urllib.request
 from colorama import Fore, Style
@@ -48,7 +50,18 @@ def obtener_url(url):
     return urllib.urlopen(url).read();
 
 
+def imprimir_url(id):
+    if id in urls:
+        print(urls[id]['url'])
+        exit(0)
+
+    exit(1)
+
+
 if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        imprimir_url(sys.argv[1])
+
     print('Validando las URL de las depencencias')
     se_encontraron_errores = False
     for key in urls:
