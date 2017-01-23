@@ -1,0 +1,10 @@
+{
+    "some_memorable_identifier": {
+        "project": "Some Name",
+        "url": "https://www.example.com"
+    },
+    "myproject": {
+        "project": "My Project",
+        "url": "https://www.myproject.com/thefile"
+    }
+}
