@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import sys
+import os, sys
 
 import urllib.parse
 import urllib.request
@@ -11,7 +11,11 @@ import json
 
 urls = {}
 
-data_path = './urls.json'
+path = sys.argv[0]
+real_path = os.path.realpath(path)
+appdir = os.path.dirname(real_path)
+
+data_path = os.path.join(appdir, 'urls.json')
 
 
 with open(data_path, 'r') as f:
