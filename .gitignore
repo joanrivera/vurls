@@ -132,3 +132,8 @@ tags
 .nfs*
 
 # End of https://www.gitignore.io/api/linux
+
+
+
+*.json
+!ulrs.example.json
