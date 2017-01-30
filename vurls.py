@@ -76,5 +76,6 @@ if __name__ == "__main__":
             print(Fore.GREEN + 'Ok' + Style.RESET_ALL)
         else:
             print(Fore.RED + 'Error: ' + Style.RESET_ALL + url)
+            se_encontraron_errores = True
     if se_encontraron_errores:
         exit(1)
